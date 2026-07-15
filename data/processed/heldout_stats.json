@@ -1,0 +1,69 @@
+{
+  "repos": {
+    "Python": [
+      "psf/requests",
+      "pallets/flask"
+    ],
+    "Java": [
+      "google/gson",
+      "square/retrofit"
+    ],
+    "C++": [
+      "fmtlib/fmt",
+      "nlohmann/json"
+    ],
+    "JavaScript": [
+      "lodash/lodash",
+      "expressjs/express"
+    ],
+    "Go": [
+      "spf13/cobra",
+      "gin-gonic/gin",
+      "sirupsen/logrus"
+    ],
+    "C": [
+      "nothings/stb",
+      "antirez/sds",
+      "redis/redis",
+      "curl/curl"
+    ],
+    "Ruby": [
+      "sinatra/sinatra",
+      "rack/rack"
+    ],
+    "PHP": [
+      "guzzle/guzzle",
+      "briannesbitt/Carbon"
+    ],
+    "Rust": [
+      "BurntSushi/ripgrep",
+      "clap-rs/clap"
+    ],
+    "C#": [
+      "JamesNK/Newtonsoft.Json",
+      "AutoMapper/AutoMapper",
+      "restsharp/RestSharp"
+    ]
+  },
+  "counts": {
+    "raw": 740,
+    "nocomment": 740
+  },
+  "cap_per_class": 74,
+  "dropped": {
+    "drop_mostly_comment": 500,
+    "drop_dup": 166
+  },
+  "per_class": {
+    "Python": 74,
+    "Java": 74,
+    "C++": 74,
+    "JavaScript": 74,
+    "Go": 74,
+    "C": 74,
+    "Ruby": 74,
+    "PHP": 74,
+    "Rust": 74,
+    "C#": 74
+  }
+}

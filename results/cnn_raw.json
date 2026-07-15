@@ -1,0 +1,1444 @@
+{
+  "variant": "raw",
+  "params": 68938,
+  "vocab": 102,
+  "best_epoch": 18,
+  "history": {
+    "train_loss": [
+      1.9048077652941113,
+      0.9399926360338204,
+      0.7085908710667831,
+      0.5498237267332506,
+      0.45815703628797433,
+      0.38205729565405927,
+      0.3257028845890996,
+      0.28272949364152333,
+      0.24070366534188545,
+      0.22036346918468244,
+      0.19916051072645352,
+      0.1767749704992895,
+      0.15429135880049538,
+      0.1401930061756121,
+      0.12949531851342805,
+      0.12025892414539331,
+      0.1060416875836346,
+      0.10126550763432955,
+      0.095155271766095,
+      0.08608459967436675,
+      0.07966614198313453,
+      0.07233524651057167,
+      0.07008912215080228,
+      0.05980786187735396,
+      0.054631286643986886
+    ],
+    "train_acc": [
+      0.3458823529411765,
+      0.6910726643598616,
+      0.7640138408304499,
+      0.8207612456747405,
+      0.8532871972318339,
+      0.8787543252595156,
+      0.9000692041522491,
+      0.9140484429065744,
+      0.9280276816608997,
+      0.9363321799307959,
+      0.9385467128027681,
+      0.9487889273356401,
+      0.956955017301038,
+      0.96,
+      0.9637370242214532,
+      0.9665051903114187,
+      0.9714878892733564,
+      0.9719031141868512,
+      0.9728719723183391,
+      0.9770242214532872,
+      0.9788235294117648,
+      0.9818685121107267,
+      0.9813148788927336,
+      0.984636678200692,
+      0.9874048442906574
+    ],
+    "val_loss": [
+      0.88270099130955,
+      0.5205422474967368,
+      0.40529675991473907,
+      0.34956647483050607,
+      0.31202685847568395,
+      0.28247670532002445,
+      0.25955108679931344,
+      0.2552107667397694,
+      0.23079870497144422,
+      0.222444262323648,
+      0.21588006830857462,
+      0.20689071669280895,
+      0.2152602290290076,
+      0.2128405495110165,
+      0.20337811240075998,
+      0.2054949121930462,
+      0.20184211777648553,
+      0.20136656463510988,
+      0.1924211497406043,
+      0.1975615243433155,
+      0.19738402068979738,
+      0.19326004229093852,
+      0.18802623678742014,
+      0.19154666541110055,
+      0.2032397000559103
+    ],
+    "val_acc": [
+      0.7986536107711139,
+      0.8537331701346389,
+      0.8916768665850673,
+      0.9026927784577723,
+      0.8984088127294981,
+      0.9137086903304773,
+      0.9198286413708691,
+      0.9192166462668299,
+      0.927172582619339,
+      0.9290085679314566,
+      0.9302325581395349,
+      0.9375764993880049,
+      0.9314565483476133,
+      0.9302325581395349,
+      0.9290085679314566,
+      0.9332925336597307,
+      0.9375764993880049,
+      0.9394124847001224,
+      0.9430844553243574,
+      0.9351285189718482,
+      0.9400244798041616,
+      0.9412484700122399,
+      0.9430844553243574,
+      0.9418604651162791,
+      0.9400244798041616
+    ]
+  },
+  "labels": [
+    "C",
+    "C#",
+    "C++",
+    "Go",
+    "Java",
+    "JavaScript",
+    "PHP",
+    "Python",
+    "Ruby",
+    "Rust"
+  ],
+  "device": "mps",
+  "hparams": {
+    "variant": "raw",
+    "epochs": 30,
+    "bs": 64,
+    "lr": 0.001,
+    "patience": 6
+  },
+  "val": {
+    "loss": 0.1924211497406043,
+    "accuracy": 0.9430844553243574,
+    "macro_f1": 0.9428397907938635,
+    "per_class_f1": [
+      0.9036144578313253,
+      0.926984126984127,
+      0.9544072948328268,
+      0.9848942598187311,
+      0.9103448275862069,
+      0.924791086350975,
+      0.967948717948718,
+      0.9382716049382716,
+      0.9554896142433236,
+      0.9616519174041298
+    ],
+    "confusion": [
+      [
+        150,
+        1,
+        1,
+        1,
+        0,
+        3,
+        0,
+        5,
+        0,
+        0
+      ],
+      [
+        3,
+        146,
+        2,
+        0,
+        7,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        6,
+        1,
+        157,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        163,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        4,
+        5,
+        3,
+        0,
+        132,
+        2,
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        5,
+        0,
+        1,
+        0,
+        1,
+        166,
+        0,
+        4,
+        3,
+        3
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        151,
+        4,
+        4,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        1,
+        2,
+        0,
+        152,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        161,
+        0
+      ],
+      [
+        3,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        2,
+        163
+      ]
+    ]
+  },
+  "test": {
+    "loss": 0.23819257163111962,
+    "accuracy": 0.927381745502998,
+    "macro_f1": 0.9274157592719984,
+    "per_class_f1": [
+      0.9013157894736842,
+      0.9351535836177475,
+      0.9342105263157895,
+      0.9653179190751444,
+      0.9154929577464788,
+      0.8775510204081631,
+      0.9666666666666667,
+      0.910299003322259,
+      0.9221183800623053,
+      0.946031746031746
+    ],
+    "confusion": [
+      [
+        137,
+        0,
+        5,
+        0,
+        1,
+        1,
+        0,
+        3,
+        2,
+        1
+      ],
+      [
+        1,
+        137,
+        1,
+        1,
+        3,
+        3,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        9,
+        1,
+        142,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        167,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        4,
+        1,
+        1,
+        130,
+        5,
+        0,
+        2,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1,
+        1,
+        129,
+        0,
+        8,
+        4,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        1,
+        3,
+        116,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        137,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        2,
+        0,
+        2,
+        0,
+        6,
+        148,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1,
+        2,
+        3,
+        1,
+        2,
+        2,
+        149
+      ]
+    ]
+  },
+  "heldout": {
+    "loss": 0.49523914440258127,
+    "accuracy": 0.8283783783783784,
+    "macro_f1": 0.8217345690433341,
+    "per_class_f1": [
+      0.7518796992481203,
+      0.9290322580645162,
+      0.9027777777777779,
+      0.9305555555555555,
+      0.6776859504132232,
+      0.7643979057591623,
+      0.6607142857142857,
+      0.8625,
+      0.8930817610062894,
+      0.84472049689441
+    ],
+    "confusion": [
+      [
+        50,
+        3,
+        4,
+        1,
+        3,
+        5,
+        1,
+        4,
+        2,
+        1
+      ],
+      [
+        0,
+        72,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        65,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        67,
+        2,
+        1,
+        0,
+        3,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        41,
+        30,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        73,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        4,
+        0,
+        1,
+        1,
+        7,
+        37,
+        1,
+        5,
+        16
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        69,
+        4,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        71,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        3,
+        1,
+        68
+      ]
+    ]
+  },
+  "heldout_errors": [
+    {
+      "true": "Python",
+      "pred": "Ruby",
+      "repo": "pallets/flask",
+      "path": "src/flask/json/tag.py",
+      "text": "to handle this we will dump the items as a list of ``[key, value]``\npairs. Subclass :class:`JSONTag` and give it the new key ``' od'`` to\nidentify the type. The session serializer processes dicts first, so\ninsert the new tag at the front of the order since"
+    },
+    {
+      "true": "Python",
+      "pred": "Ruby",
+      "repo": "psf/requests",
+      "path": "tests/test_utils.py",
+      "text": "    get_auth_from_url,\n    get_encoding_from_headers,\n    get_encodings_from_content,\n    get_environ_proxies,\n    get_netrc_auth,\n    guess_filename,\n    guess_json_utf,\n    is_ipv4_address,\n    is_valid_cidr,\n    iter_slices,\n    parse_dict_header,\n    p"
+    },
+    {
+      "true": "Python",
+      "pred": "Ruby",
+      "repo": "psf/requests",
+      "path": "src/requests/_internal_utils.py",
+      "text": "_VALID_HEADER_NAME_RE_BYTE = re.compile(rb\"^[^:\\s][^:\\r\\n]*\\Z\")\n_VALID_HEADER_NAME_RE_STR = re.compile(r\"^[^:\\s][^:\\r\\n]*\\Z\")\n_VALID_HEADER_VALUE_RE_BYTE = re.compile(rb\"^\\S[^\\r\\n]*\\Z|^\\Z\")\n_VALID_HEADER_VALUE_RE_STR = re.compile(r\"^\\S[^\\r\\n]*\\Z|^\\Z\")\n\n_HE"
+    },
+    {
+      "true": "Python",
+      "pred": "Rust",
+      "repo": "pallets/flask",
+      "path": "src/flask/json/provider.py",
+      "text": "    To implement a provider for a specific library, subclass this base\n    class and implement at least :meth:`dumps` and :meth:`loads`. All\n    other methods have default implementations.\n\n    To use a different provider, either subclass ``Flask`` and set"
+    },
+    {
+      "true": "Python",
+      "pred": "Ruby",
+      "repo": "psf/requests",
+      "path": "src/requests/status_codes.py",
+      "text": "    >>> requests.codes.teapot\n    418\n    >>> requests.codes['\\o/']\n    200\n\nSome codes have multiple names, and both upper- and lower-case versions of\nthe names are allowed. For example, ``codes.ok``, ``codes.OK``, and\n``codes.okay`` all correspond to the"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "square/retrofit",
+      "path": "retrofit-adapters/rxjava3/src/main/java/retrofit2/adapter/rxjava3/BodyObservable.java",
+      "text": "/*\n * Copyright (C) 2020  Square, Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/lic"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/test/java/com/google/gson/functional/MapTest.java",
+      "text": " * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.gson.functional;\n\nimport static com.google.common.truth.Truth.assertThat;\nimport static com.google.common.truth.Truth.assertWit"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "proto/src/test/java/com/google/gson/protobuf/functional/TestMessages.java",
+      "text": "/*\n * Copyright (C) 2026 Google Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n * http://www.apache.org/licenses/L"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/test/java/com/google/gson/internal/UnsafeAllocatorInstantiationTest.java",
+      "text": "/*\n * Copyright (C) 2016 Google Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n * http://www.apache.org/licenses/L"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/test/java/com/google/gson/functional/ToNumberPolicyFunctionalTest.java",
+      "text": "/*\n * Copyright (C) 2021 Google Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n * http://www.apache.org/licenses/L"
+    },
+    {
+      "true": "Java",
+      "pred": "Ruby",
+      "repo": "google/gson",
+      "path": "gson/src/test/java/com/google/gson/internal/bind/JsonElementReaderTest.java",
+      "text": " *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expres"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "proto/src/test/java/com/google/gson/protobuf/functional/ProtosWithAnnotationsAndJsonNamesTest.java",
+      "text": " * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.google.gson.protobuf.functional;\n\nimport static com.google.common.truth.Truth.assertThat;\n\nimport com.google.gson.Gson;\nimport com.goog"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/test/java/com/google/gson/internal/bind/JsonElementReaderTest.java",
+      "text": "/*\n * Copyright (C) 2011 Google Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licen"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/test/java/com/google/gson/functional/RawSerializationTest.java",
+      "text": " * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.google.gson.functional;\n\nimport static com.google.common.truth.Truth.assertThat;\n\nimport com.google.gson.Gson;\nimport com.google.gson.r"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "square/retrofit",
+      "path": "retrofit-converters/protobuf/src/main/java/retrofit2/converter/protobuf/ProtoStreamingRequestBody.java",
+      "text": "/*\n * Copyright (C) 2025 Square, Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/lice"
+    },
+    {
+      "true": "Java",
+      "pred": "C",
+      "repo": "google/gson",
+      "path": "gson/src/main/java/com/google/gson/JsonParseException.java",
+      "text": " * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.gson;\n\n/**\n * This exception is raised if there is a serious issue that occurs during parsing of a Json string.\n * One of the m"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/main/java/com/google/gson/JsonSerializationContext.java",
+      "text": "/*\n * Copyright (C) 2008 Google Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n * http://www.apache.org/licenses/L"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/test/java/com/google/gson/functional/ToNumberPolicyFunctionalTest.java",
+      "text": " * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.gson.functional;\n\nimport static com.google.common.truth.Truth.assertThat;\nimport static org.junit.Assert.assertThrows;\n\nimport "
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/test/java/com/google/gson/functional/ReadersWritersTest.java",
+      "text": " * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.google.gson.functional;\n\nimport static com.google.common.truth.Truth.assertThat;\nimport static org.junit.Assert.assertThrows;\n\nimport c"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/main/java/com/google/gson/internal/package-info.java",
+      "text": "/*\n * Copyright (C) 2011 Google Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n * http://www.apache.org/licenses/L"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/test/java/com/google/gson/internal/StreamsTest.java",
+      "text": "/*\n * Copyright (C) 2022 Google Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n * http://www.apache.org/licenses/L"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "square/retrofit",
+      "path": "retrofit-converters/jaxb/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java",
+      "text": "/*\n * Copyright (C) 2018 Square, Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/lice"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "square/retrofit",
+      "path": "retrofit/android-test/src/androidTest/java/retrofit2/DefaultMethodsAndroidTest.java",
+      "text": "/*\n * Copyright (C) 2016 Square, Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/lice"
+    },
+    {
+      "true": "Java",
+      "pred": "C",
+      "repo": "google/gson",
+      "path": "gson/src/main/java/com/google/gson/internal/package-info.java",
+      "text": " * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\n/**\n * Do NOT use any class in this package as they are meant for internal use in Gson. These classes\n * will very likely change incompatibly in f"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "square/retrofit",
+      "path": "samples/src/main/java/com/example/retrofit/SimpleService.java",
+      "text": "/*\n * Copyright (C) 2012 Square, Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/lice"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/test/java/com/google/gson/functional/TypeAdapterRuntimeTypeWrapperTest.java",
+      "text": " * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.gson.functional;\n\nimport static com.google.common.truth.Truth.assertThat;\n\nimport com.google.gson.Gson;\nimport com.google.gson."
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/main/java/com/google/gson/LongSerializationPolicy.java",
+      "text": "/*\n * Copyright (C) 2009 Google Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n * http://www.apache.org/licenses/L"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "square/retrofit",
+      "path": "retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/CompletableThrowingTest.java",
+      "text": "/*\n * Copyright (C) 2020 Square, Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/lice"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/test/java/com/google/gson/functional/ReflectionAccessTest.java",
+      "text": " * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.gson.functional;\n\nimport static com.google.common.truth.Truth.assertThat;\nimport static org.junit.Assert.assertThrows;\nimport s"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "square/retrofit",
+      "path": "retrofit/src/main/java/retrofit2/RequestFactory.java",
+      "text": "/*\n * Copyright (C) 2015 Square, Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/lice"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "square/retrofit",
+      "path": "retrofit-adapters/scala/src/main/java/retrofit2/adapter/scala/BodyCallAdapter.java",
+      "text": "/*\n * Copyright (C) 2017 Square, Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/lice"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/main/java/com/google/gson/internal/sql/SqlTimestampTypeAdapter.java",
+      "text": "/*\n * Copyright (C) 2020 Google Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n * http://www.apache.org/licenses/L"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "proto/src/test/java/com/google/gson/protobuf/functional/ProtosWithAnnotationsAndJsonNamesTest.java",
+      "text": "/*\n * Copyright (C) 2024 Google Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n * http://www.apache.org/licenses/L"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/main/java-templates/com/google/gson/internal/GsonBuildConfig.java",
+      "text": "/*\n * Copyright (C) 2018 The Gson authors\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n * http://www.apache.org/licen"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "proto/src/test/java/com/google/gson/protobuf/functional/TestMessages.java",
+      "text": " * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.google.gson.protobuf.functional;\n\nimport com.google.gson.protobuf.TestAllTypes;\nimport com.google.gson.protobuf.TestAllTypes.NestedEnum"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/main/java/com/google/gson/stream/JsonReader.java",
+      "text": "/*\n * Copyright (C) 2010 Google Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licen"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "google/gson",
+      "path": "gson/src/test/java/com/google/gson/functional/RawSerializationTest.java",
+      "text": "/*\n * Copyright (C) 2010 Google Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n * http://www.apache.org/licenses/L"
+    },
+    {
+      "true": "Java",
+      "pred": "JavaScript",
+      "repo": "square/retrofit",
+      "path": "retrofit/src/main/java/retrofit2/http/DELETE.java",
+      "text": "/*\n * Copyright (C) 2013 Square, Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/lice"
+    },
+    {
+      "true": "C++",
+      "pred": "C",
+      "repo": "fmtlib/fmt",
+      "path": "test/fuzzing/named-arg.cc",
+      "text": "void invoke_fmt(const uint8_t* data, size_t size, unsigned arg_name_size) {\n  static_assert(sizeof(T) <= fixed_size, \"fixed_size too small\");\n  if (size <= fixed_size) return;\n  const T value = assign_from_buf<T>(data);\n  data += fixed_size;\n  size -= fixe"
+    },
+    {
+      "true": "C++",
+      "pred": "C",
+      "repo": "fmtlib/fmt",
+      "path": "test/fuzzing/one-arg.cc",
+      "text": "  static_assert(sizeof(Repr) <= fixed_size, \"Nfixed is too small\");\n  if (size <= fixed_size) return;\n  auto repr = assign_from_buf<Repr>(data);\n  const T* value = from_repr<T>(repr);\n  if (!value) return;\n  data += fixed_size;\n  size -= fixed_size;\n  data"
+    },
+    {
+      "true": "C++",
+      "pred": "Python",
+      "repo": "nlohmann/json",
+      "path": "include/nlohmann/detail/conversions/to_chars.hpp",
+      "text": "#include <cstring> // memcpy, memmove\n#include <limits> // numeric_limits\n#include <type_traits> // conditional\n\n#include <nlohmann/detail/macro_scope.hpp>\n\nNLOHMANN_JSON_NAMESPACE_BEGIN\nnamespace detail\n{\n\n/*!\n@brief implements the Grisu2 algorithm for bi"
+    },
+    {
+      "true": "C++",
+      "pred": "Python",
+      "repo": "nlohmann/json",
+      "path": "include/nlohmann/detail/iterators/primitive_iterator.hpp",
+      "text": "@brief an iterator for primitive JSON types\n\nThis class models an iterator for primitive JSON types (boolean, number,\nstring). It's only purpose is to allow the iterator/const_iterator classes\nto \"iterate\" over primitive values. Internally, the iterator is"
+    },
+    {
+      "true": "C++",
+      "pred": "C",
+      "repo": "nlohmann/json",
+      "path": "tests/thirdparty/Fuzzer/FuzzerExtFunctionsWeakAlias.cpp",
+      "text": "#if LIBFUZZER_WINDOWS\n\n#include \"FuzzerExtFunctions.h\"\n#include \"FuzzerIO.h\"\n\nusing namespace fuzzer;\n\nextern \"C\" {\n// Declare these symbols as weak to allow them to be optionally defined.\n#define EXT_FUNC(NAME, RETURN_TYPE, FUNC_SIG, WARN)                "
+    },
+    {
+      "true": "C++",
+      "pred": "Rust",
+      "repo": "fmtlib/fmt",
+      "path": "test/fuzzing/main.cc",
+      "text": "    assert(in.gcount() == size);\n    LLVMFuzzerTestOneInput(as_bytes(buf.data()), buf.size());\n  }\n}\n"
+    },
+    {
+      "true": "C++",
+      "pred": "C",
+      "repo": "fmtlib/fmt",
+      "path": "test/module-test.cc",
+      "text": "     defined(__linux__)) &&                              \\\n    (!defined(WINAPI_FAMILY) || (WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP))\n#  include <fcntl.h>\n#  define FMT_USE_FCNTL 1\n#else\n#  define FMT_USE_FCNTL 0\n#endif\n#if defined(_WIN32) && !defined(_"
+    },
+    {
+      "true": "C++",
+      "pred": "Ruby",
+      "repo": "fmtlib/fmt",
+      "path": "test/detect-stdfs.cc",
+      "text": "#include <exception>  // _GLIBCXX_RELEASE & _LIBCPP_VERSION\n\n#if defined(_GLIBCXX_RELEASE) && _GLIBCXX_RELEASE == 8\n#  error libfound \"stdc++fs\"\n#elif !defined(__apple_build_version__) && defined(_LIBCPP_VERSION) && \\\n    _LIBCPP_VERSION >= 7000 && _LIBCPP"
+    },
+    {
+      "true": "C++",
+      "pred": "C",
+      "repo": "nlohmann/json",
+      "path": "tests/thirdparty/Fuzzer/test/OutOfMemorySingleLargeMallocTest.cpp",
+      "text": "static volatile char *SinkPtr;\n\nextern \"C\" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {\n  if (Size > 0 && Data[0] == 'H') {\n    if (Size > 1 && Data[1] == 'i') {\n      if (Size > 2 && Data[2] == '!') {\n          size_t kSize = 0xff000000U"
+    },
+    {
+      "true": "JavaScript",
+      "pred": "Python",
+      "repo": "lodash/lodash",
+      "path": "fp/_mapping.js",
+      "text": "  'F': 'stubFalse',\n  'T': 'stubTrue',\n  'all': 'every',\n  'allPass': 'overEvery',\n  'always': 'constant',\n  'any': 'some',\n  'anyPass': 'overSome',\n  'apply': 'spread',\n  'assoc': 'set',\n  'assocPath': 'set',\n  'complement': 'negate',\n  'compose': 'flowRi"
+    },
+    {
+      "true": "Go",
+      "pred": "C#",
+      "repo": "sirupsen/logrus",
+      "path": "example_hook_test.go",
+      "text": "\tlog.Formatter = new(logrus.TextFormatter)                     // default\n\tlog.Formatter.(*logrus.TextFormatter).DisableColors = true    // remove colors\n\tlog.Formatter.(*logrus.TextFormatter).DisableTimestamp = true // remove timestamp from test output\n\ti"
+    },
+    {
+      "true": "Go",
+      "pred": "Python",
+      "repo": "gin-gonic/gin",
+      "path": "render/render.go",
+      "text": "\t_ Render     = (*JSON)(nil)\n\t_ Render     = (*IndentedJSON)(nil)\n\t_ Render     = (*SecureJSON)(nil)\n\t_ Render     = (*JsonpJSON)(nil)\n\t_ Render     = (*XML)(nil)\n\t_ Render     = (*String)(nil)\n\t_ Render     = (*Redirect)(nil)\n\t_ Render     = (*Data)(nil)\n"
+    },
+    {
+      "true": "Go",
+      "pred": "Python",
+      "repo": "gin-gonic/gin",
+      "path": "context.go",
+      "text": "\tMIMEJSON              = binding.MIMEJSON\n\tMIMEHTML              = binding.MIMEHTML\n\tMIMEXML               = binding.MIMEXML\n\tMIMEXML2              = binding.MIMEXML2\n\tMIMEPlain             = binding.MIMEPlain\n\tMIMEPOSTForm          = binding.MIMEPOSTForm\n"
+    },
+    {
+      "true": "Go",
+      "pred": "Java",
+      "repo": "gin-gonic/gin",
+      "path": "render/render_test.go",
+      "text": "\t\"net/http\"\n\t\"net/http/httptest\"\n\t\"strconv\"\n\t\"strings\"\n\t\"testing\"\n\n\ttestdata \"github.com/gin-gonic/gin/testdata/protoexample\"\n\t\"github.com/stretchr/testify/assert\"\n\t\"github.com/stretchr/testify/require\"\n\t\"go.mongodb.org/mongo-driver/v2/bson\"\n\t\"google.golan"
+    },
+    {
+      "true": "Go",
+      "pred": "Java",
+      "repo": "gin-gonic/gin",
+      "path": "binding/binding_test.go",
+      "text": "\t\"net/http\"\n\t\"os\"\n\t\"reflect\"\n\t\"strconv\"\n\t\"strings\"\n\t\"testing\"\n\t\"time\"\n\n\t\"github.com/gin-gonic/gin/testdata/protoexample\"\n\t\"github.com/stretchr/testify/assert\"\n\t\"github.com/stretchr/testify/require\"\n\t\"go.mongodb.org/mongo-driver/v2/bson\"\n\t\"google.golang.org"
+    },
+    {
+      "true": "Go",
+      "pred": "Python",
+      "repo": "gin-gonic/gin",
+      "path": "mode_test.go",
+      "text": "\tSetMode(\"\")\n\tassert.Equal(t, int32(testCode), atomic.LoadInt32(&ginMode))\n\tassert.Equal(t, TestMode, Mode())\n\n\tSetMode(DebugMode)\n\tassert.Equal(t, int32(debugCode), atomic.LoadInt32(&ginMode))\n\tassert.Equal(t, DebugMode, Mode())\n\n\tSetMode(ReleaseMode)\n\tas"
+    },
+    {
+      "true": "Go",
+      "pred": "JavaScript",
+      "repo": "gin-gonic/gin",
+      "path": "binding/binding_nomsgpack.go",
+      "text": "// Content-Type MIME of the most common data formats.\nconst (\n\tMIMEJSON              = \"application/json\"\n\tMIMEHTML              = \"text/html\"\n\tMIMEXML               = \"application/xml\"\n\tMIMEXML2              = \"text/xml\"\n\tMIMEPlain             = \"text/pla"
+    },
+    {
+      "true": "C",
+      "pred": "PHP",
+      "repo": "redis/redis",
+      "path": "deps/lua/src/loadlib.c",
+      "text": "/*\n** $Id: loadlib.c,v 1.52.1.4 2009/09/09 13:17:16 roberto Exp $\n** Dynamic library loader for Lua\n** See Copyright Notice in lua.h\n**\n** This module contains an implementation of loadlib for Unix systems\n** that have dlfcn, an implementation for Darwin ("
+    },
+    {
+      "true": "C",
+      "pred": "JavaScript",
+      "repo": "redis/redis",
+      "path": "src/geohash.c",
+      "text": " *  * Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n *  * Neither the name of Redis nor"
+    },
+    {
+      "true": "C",
+      "pred": "C#",
+      "repo": "redis/redis",
+      "path": "src/adlist.c",
+      "text": "/* adlist.c - A generic doubly linked list implementation\n *\n * Copyright (c) 2006-Present, Redis Ltd.\n * All rights reserved.\n *\n * Licensed under your choice of (a) the Redis Source Available License 2.0\n * (RSALv2); or (b) the Server Side Public License"
+    },
+    {
+      "true": "C",
+      "pred": "JavaScript",
+      "repo": "antirez/sds",
+      "path": "sds.c",
+      "text": " *     this list of conditions and the following disclaimer.\n *   * Redistributions in binary form must reproduce the above copyright\n *     notice, this list of conditions and the following disclaimer in the\n *     documentation and/or other materials pro"
+    },
+    {
+      "true": "C",
+      "pred": "C++",
+      "repo": "nothings/stb",
+      "path": "tests/truetype_test_win32.c",
+      "text": "   fread(ttf_buffer, 1, 1<<20, fopen(\"c:/windows/fonts/times.ttf\", \"rb\"));\n   stbtt_BakeFontBitmap(ttf_buffer,0, 64.0, temp_bitmap,1024,1024, 32,96, cdata);\n   glGenTextures(1, &tex);\n   glBindTexture(GL_TEXTURE_2D, tex);\n   glTexImage2D(GL_TEXTURE_2D, 0, "
+    },
+    {
+      "true": "C",
+      "pred": "C++",
+      "repo": "redis/redis",
+      "path": "tests/modules/infotest.c",
+      "text": "    RedisModule_InfoAddFieldLongLong(ctx, \"dos\", 2);\n\n    RedisModule_InfoAddSection(ctx, \"Italian\");\n    RedisModule_InfoAddFieldLongLong(ctx, \"due\", 2);\n    RedisModule_InfoAddFieldDouble(ctx, \"tre\", 3.3);\n\n    RedisModule_InfoAddSection(ctx, \"keyspace\")"
+    },
+    {
+      "true": "C",
+      "pred": "JavaScript",
+      "repo": "redis/redis",
+      "path": "src/syncio.c",
+      "text": "/* Synchronous socket and file I/O operations useful across the core.\n *\n * Copyright (c) 2009-Present, Redis Ltd.\n * All rights reserved.\n *\n * Licensed under your choice of (a) the Redis Source Available License 2.0\n * (RSALv2); or (b) the Server Side Pu"
+    },
+    {
+      "true": "C",
+      "pred": "Python",
+      "repo": "redis/redis",
+      "path": "src/redis-check-aof.c",
+      "text": " * modification, are permitted provided that the following conditions are met:\n *\n *   * Redistributions of source code must retain the above copyright notice,\n *     this list of conditions and the following disclaimer.\n *   * Redistributions in binary fo"
+    },
+    {
+      "true": "C",
+      "pred": "C++",
+      "repo": "redis/redis",
+      "path": "src/redis-check-aof.c",
+      "text": "/*\n * Copyright (c) 2009-2012, Pieter Noordhuis <pcnoordhuis at gmail dot com>\n * Copyright (c) 2009-current, Redis Ltd.\n * All rights reserved.\n *\n * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provide"
+    },
+    {
+      "true": "C",
+      "pred": "Go",
+      "repo": "redis/redis",
+      "path": "tests/modules/eventloop.c",
+      "text": "/* This module contains four tests :\n * 1- test.sanity    : Basic tests for argument validation mostly.\n * 2- test.sendbytes : Creates a pipe and registers its fds to the event loop,\n *                     one end of the pipe for read events and the other "
+    },
+    {
+      "true": "C",
+      "pred": "JavaScript",
+      "repo": "redis/redis",
+      "path": "tests/modules/propagate.c",
+      "text": " * We create a timer callback and a threads using a thread safe context.\n * Using both we try to propagate counters increments, and later we check\n * if the replica contains the changes as expected.\n *\n * ---------------------------------------------------"
+    },
+    {
+      "true": "C",
+      "pred": "Python",
+      "repo": "redis/redis",
+      "path": "tests/modules/postnotifications_perkey_metadata.c",
+      "text": " * enqueue a job that attempts a (forbidden) RM_NotifyKeyspaceEvent, to check the\n * runtime refuses that too.\n *\n * Commands:\n *   pkmeta.getmeta <key>   - metadata string, or nil\n *   pkmeta.firecount       - how many times the per-key job ran\n *   pkmet"
+    },
+    {
+      "true": "C",
+      "pred": "Python",
+      "repo": "redis/redis",
+      "path": "src/geohash.c",
+      "text": " * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions are met:\n *\n *  * Redistributions of source code must retain the above copyright notice,\n *    this list of conditio"
+    },
+    {
+      "true": "C",
+      "pred": "JavaScript",
+      "repo": "redis/redis",
+      "path": "src/redis-check-aof.c",
+      "text": " *     notice, this list of conditions and the following disclaimer in the\n *     documentation and/or other materials provided with the distribution.\n *   * Neither the name of Redis nor the names of its contributors may be used\n *     to endorse or promo"
+    },
+    {
+      "true": "C",
+      "pred": "Ruby",
+      "repo": "redis/redis",
+      "path": "tests/modules/postnotifications_perkey_metadata.c",
+      "text": " * replicated, so its presence after a reload proves the callback re-ran. Keys\n * with the \"probe_\" prefix instead enqueue a job that attempts a (forbidden)\n * RM_Call, to check the runtime refuses it. Keys with the \"notifyprobe_\" prefix\n * enqueue a job t"
+    },
+    {
+      "true": "C",
+      "pred": "Rust",
+      "repo": "redis/redis",
+      "path": "tests/modules/propagate.c",
+      "text": "/* This module is used to test the propagation (replication + AOF) of\n * commands, via the RedisModule_Replicate() interface, in asynchronous\n * contexts, such as callbacks not implementing commands, and thread safe\n * contexts.\n *\n * We create a timer cal"
+    },
+    {
+      "true": "C",
+      "pred": "Java",
+      "repo": "curl/curl",
+      "path": "tests/libtest/lib1947.c",
+      "text": " * you should have received as part of this distribution. The terms\n * are also available at https://curl.se/docs/copyright.html.\n *\n * You may opt to use, copy, modify, merge, publish, distribute and/or sell\n * copies of the Software, and permit persons t"
+    },
+    {
+      "true": "C",
+      "pred": "Python",
+      "repo": "antirez/sds",
+      "path": "sds.c",
+      "text": " * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions are met:\n *\n *   * Redistributions of source code must retain the above copyright notice,\n *     this list of condit"
+    },
+    {
+      "true": "C",
+      "pred": "C++",
+      "repo": "redis/redis",
+      "path": "src/geohash.c",
+      "text": "/*\n * Copyright (c) 2013-2014, yinqiwen <yinqiwen@gmail.com>\n * Copyright (c) 2014, Matt Stancliff <matt@genges.com>.\n * Copyright (c) 2015-current, Redis Ltd.\n * All rights reserved.\n *\n * Redistribution and use in source and binary forms, with or without"
+    },
+    {
+      "true": "C",
+      "pred": "C#",
+      "repo": "redis/redis",
+      "path": "tests/modules/eventloop.c",
+      "text": " *                     one end of the pipe for read events and the other end for\n *                     the write events. On writable event, data is written. On\n *                     readable event data is read. Repeated until all data is\n *              "
+    },
+    {
+      "true": "C",
+      "pred": "Ruby",
+      "repo": "curl/curl",
+      "path": "tests/libtest/lib1947.c",
+      "text": " *                            | (__| |_| |  _ <| |___\n *                             \\___|\\___/|_| \\_\\_____|\n *\n * Copyright (C) Daniel Stenberg, <daniel@haxx.se>, et al.\n *\n * This software is licensed as described in the file COPYING, which\n * you should"
+    },
+    {
+      "true": "C",
+      "pred": "Java",
+      "repo": "curl/curl",
+      "path": "lib/vtls/mbedtls.c",
+      "text": " * This software is licensed as described in the file COPYING, which\n * you should have received as part of this distribution. The terms\n * are also available at https://curl.se/docs/copyright.html.\n *\n * You may opt to use, copy, modify, merge, publish, d"
+    },
+    {
+      "true": "C",
+      "pred": "Java",
+      "repo": "redis/redis",
+      "path": "src/syncio.c",
+      "text": "/* Redis performs most of the I/O in a nonblocking way, with the exception\n * of the SYNC command where the slave does it in a blocking way, and\n * the MIGRATE command that must be blocking in order to be atomic from the\n * point of view of the two instanc"
+    },
+    {
+      "true": "C",
+      "pred": "C#",
+      "repo": "redis/redis",
+      "path": "tests/modules/postnotifications_perkey_metadata.c",
+      "text": "/* Test module for RM_AddPostNotificationJobForKey.\n *\n * On each KSN event the handler enqueues a per-key job that attaches module\n * key metadata via RM_SetKeyMeta. Metadata is not in the AOF/RDB and is not\n * replicated, so its presence after a reload p"
+    },
+    {
+      "true": "Ruby",
+      "pred": "Python",
+      "repo": "rack/rack",
+      "path": "test/spec_utils.rb",
+      "text": "# frozen_string_literal: true\n\nrequire_relative 'helper'\nrequire 'timeout'\n\nseparate_testing do\n  require_relative '../lib/rack/utils'\n  require_relative '../lib/rack/lint'\n  require_relative '../lib/rack/mock_request'\n  require_relative '../lib/rack/reque"
+    },
+    {
+      "true": "Ruby",
+      "pred": "Python",
+      "repo": "rack/rack",
+      "path": "test/spec_request.rb",
+      "text": "# frozen_string_literal: true\n\nrequire_relative 'helper'\nrequire 'cgi/escape'\nrequire 'forwardable'\nrequire 'securerandom'\n\nseparate_testing do\n  require_relative '../lib/rack/request'\n  require_relative '../lib/rack/mock_request'\n  require_relative '../li"
+    },
+    {
+      "true": "Ruby",
+      "pred": "Python",
+      "repo": "rack/rack",
+      "path": "lib/rack/deflater.rb",
+      "text": "# frozen_string_literal: true\n\nrequire \"zlib\"\nrequire \"time\"  # for Time.httpdate\n\nrequire_relative 'constants'\nrequire_relative 'utils'\nrequire_relative 'request'\nrequire_relative 'body_proxy'\n\nmodule Rack\n  # This middleware enables content encoding of h"
+    },
+    {
+      "true": "PHP",
+      "pred": "JavaScript",
+      "repo": "guzzle/guzzle",
+      "path": "src/functions.php",
+      "text": " * @return string Returns a string containing the type of the variable and\n *                if a class is provided, the class name.\n *\n * @deprecated describe_type will be removed in guzzlehttp/guzzle:8.0. Use Utils::describeType instead.\n */\nfunction des"
+    },
+    {
+      "true": "PHP",
+      "pred": "Ruby",
+      "repo": "briannesbitt/Carbon",
+      "path": "src/Carbon/Lang/bg.php",
+      "text": "    'month' => ':count \u043c\u0435\u0441\u0435\u0446|:count \u043c\u0435\u0441\u0435\u0446\u0430',\n    'a_month' => '\u043c\u0435\u0441\u0435\u0446|:count \u043c\u0435\u0441\u0435\u0446\u0430',\n    'm' => ':count \u043c\u0435\u0441\u0435\u0446|:count \u043c\u0435\u0441\u0435\u0446\u0430',\n    'week' => ':count \u0441\u0435\u0434\u043c\u0438\u0446\u0430|:count \u0441\u0435\u0434\u043c\u0438\u0446\u0438',\n    'a_week' => '\u0441\u0435\u0434\u043c\u0438\u0446\u0430|:count \u0441\u0435\u0434\u043c\u0438\u0446\u0438',\n    'w' => ':count \u0441\u0435\u0434\u043c\u0438\u0446\u0430|:count \u0441\u0435\u0434\u043c\u0438\u0446\u0438"
+    },
+    {
+      "true": "PHP",
+      "pred": "Java",
+      "repo": "guzzle/guzzle",
+      "path": "src/ClientInterface.php",
+      "text": " * Client interface for sending HTTP requests.\n */\ninterface ClientInterface\n{\n    /**\n     * The Guzzle major version.\n     */\n    public const MAJOR_VERSION = 7;\n\n    /**\n     * Send an HTTP request.\n     *\n     * @param RequestInterface $request Request"
+    },
+    {
+      "true": "PHP",
+      "pred": "Rust",
+      "repo": "briannesbitt/Carbon",
+      "path": "tests/Localization/CeRuTest.php",
+      "text": " */\n\nnamespace Tests\\Localization;\n\nuse PHPUnit\\Framework\\Attributes\\Group;\n\n#[Group('localization')]\nclass CeRuTest extends LocalizationTestCase\n{\n    public const LOCALE = 'ce_RU'; // Chechen\n\n    public const CASES = [\n        // Carbon::parse('2018-01-"
+    },
+    {
+      "true": "PHP",
+      "pred": "Rust",
+      "repo": "guzzle/guzzle",
+      "path": "tests/InternalUtilsTest.php",
+      "text": "        self::assertSame('xn--d1acpjx3f.xn--p1ai', $uri->getHost());\n    }\n}\n"
+    },
+    {
+      "true": "PHP",
+      "pred": "Rust",
+      "repo": "briannesbitt/Carbon",
+      "path": "tests/Localization/PsAfTest.php",
+      "text": " */\n\nnamespace Tests\\Localization;\n\nuse PHPUnit\\Framework\\Attributes\\Group;\n\n#[Group('localization')]\nclass PsAfTest extends LocalizationTestCase\n{\n    public const LOCALE = 'ps_AF'; // Pashto\n\n    public const CASES = [\n        // Carbon::parse('2018-01-0"
+    },
+    {
+      "true": "PHP",
+      "pred": "Rust",
+      "repo": "briannesbitt/Carbon",
+      "path": "tests/Localization/ArDzTest.php",
+      "text": " */\n\nnamespace Tests\\Localization;\n\nuse PHPUnit\\Framework\\Attributes\\Group;\n\n#[Group('localization')]\nclass ArDzTest extends LocalizationTestCase\n{\n    public const LOCALE = 'ar_DZ'; // Arabic\n\n    public const CASES = [\n        // Carbon::parse('2018-01-0"
+    },
+    {
+      "true": "PHP",
+      "pred": "Ruby",
+      "repo": "briannesbitt/Carbon",
+      "path": "src/Carbon/Lang/my.php",
+      "text": " * - Josh Soref\n * - JD Isaacks\n * - Nay Lin Aung\n */\nreturn [\n    'year' => ':count \u1014\u103e\u1005\u103a',\n    'a_year' => '{1}\u1010\u1005\u103a\u1014\u103e\u1005\u103a|[-Inf,Inf]:count \u1014\u103e\u1005\u103a',\n    'y' => ':count \u1014\u103e\u1005\u103a',\n    'month' => ':count \u101c',\n    'a_month' => '{1}\u1010\u1005\u103a\u101c|[-Inf,Inf]:count \u101c',\n    'm' => '"
+    },
+    {
+      "true": "PHP",
+      "pred": "Rust",
+      "repo": "briannesbitt/Carbon",
+      "path": "tests/Localization/SvTest.php",
+      "text": " */\n\nnamespace Tests\\Localization;\n\nuse PHPUnit\\Framework\\Attributes\\Group;\n\n#[Group('localization')]\nclass SvTest extends LocalizationTestCase\n{\n    public const LOCALE = 'sv'; // Swedish\n\n    public const CASES = [\n        // Carbon::parse('2018-01-04 00"
+    },
+    {
+      "true": "PHP",
+      "pred": "Rust",
+      "repo": "briannesbitt/Carbon",
+      "path": "tests/Localization/IdTest.php",
+      "text": " */\n\nnamespace Tests\\Localization;\n\nuse PHPUnit\\Framework\\Attributes\\Group;\n\n#[Group('localization')]\nclass IdTest extends LocalizationTestCase\n{\n    public const LOCALE = 'id'; // Indonesian\n\n    public const CASES = [\n        // Carbon::parse('2018-01-04"
+    },
+    {
+      "true": "PHP",
+      "pred": "Rust",
+      "repo": "guzzle/guzzle",
+      "path": "src/Handler/StreamHandler.php",
+      "text": "use GuzzleHttp\\TransferStats;\nuse GuzzleHttp\\Utils;\nuse Psr\\Http\\Message\\RequestInterface;\nuse Psr\\Http\\Message\\ResponseInterface;\nuse Psr\\Http\\Message\\StreamInterface;\nuse Psr\\Http\\Message\\UriInterface;\n\n/**\n * HTTP handler that uses PHP's HTTP stream wra"
+    },
+    {
+      "true": "PHP",
+      "pred": "Rust",
+      "repo": "briannesbitt/Carbon",
+      "path": "tests/Localization/EnBzTest.php",
+      "text": " */\n\nnamespace Tests\\Localization;\n\nuse PHPUnit\\Framework\\Attributes\\Group;\n\n#[Group('localization')]\nclass EnBzTest extends LocalizationTestCase\n{\n    public const LOCALE = 'en_BZ'; // English\n\n    public const CASES = [\n        // Carbon::parse('2018-01-"
+    },
+    {
+      "true": "PHP",
+      "pred": "Rust",
+      "repo": "briannesbitt/Carbon",
+      "path": "tests/Localization/GdGbTest.php",
+      "text": " */\n\nnamespace Tests\\Localization;\n\nuse PHPUnit\\Framework\\Attributes\\Group;\n\n#[Group('localization')]\nclass GdGbTest extends LocalizationTestCase\n{\n    public const LOCALE = 'gd_GB'; // ScottishGaelic\n\n    public const CASES = [\n        // Carbon::parse('2"
+    },
+    {
+      "true": "PHP",
+      "pred": "C#",
+      "repo": "briannesbitt/Carbon",
+      "path": "tests/Carbon/Exceptions/InvalidPeriodParameterExceptionTest.php",
+      "text": "namespace Tests\\Carbon\\Exceptions;\n\nuse Carbon\\Exceptions\\InvalidPeriodParameterException;\nuse Tests\\AbstractTestCase;\n\nclass InvalidPeriodParameterExceptionTest extends AbstractTestCase\n{\n    public function testInvalidPeriodParameterException(): void\n   "
+    },
+    {
+      "true": "PHP",
+      "pred": "Ruby",
+      "repo": "briannesbitt/Carbon",
+      "path": "src/Carbon/Lang/ksf.php",
+      "text": "return array_replace_recursive(require __DIR__.'/en.php', [\n    'meridiem' => ['s\u00e1r\u00faw\u00e1', 'c\u025b\u025b\u0301nko'],\n    'weekdays' => ['s\u0254\u0301nd\u01dd', 'l\u01ddnd\u00ed', 'maad\u00ed', 'm\u025bkr\u025bd\u00ed', 'j\u01dd\u01ddd\u00ed', 'j\u00famb\u00e1', 'samd\u00ed'],\n    'weekdays_short' => ['s\u0254\u0301n', 'l\u01ddn', 'maa', 'm\u025bk', 'j\u01dd\u01dd', 'j\u00fam', '"
+    },
+    {
+      "true": "PHP",
+      "pred": "Rust",
+      "repo": "briannesbitt/Carbon",
+      "path": "tests/Localization/DavTest.php",
+      "text": " */\n\nnamespace Tests\\Localization;\n\nuse PHPUnit\\Framework\\Attributes\\Group;\n\n#[Group('localization')]\nclass DavTest extends LocalizationTestCase\n{\n    public const LOCALE = 'dav'; // Taita\n\n    public const CASES = [\n        // Carbon::parse('2018-01-04 00"
+    },
+    {
+      "true": "PHP",
+      "pred": "Rust",
+      "repo": "briannesbitt/Carbon",
+      "path": "tests/Localization/FfMrTest.php",
+      "text": " */\n\nnamespace Tests\\Localization;\n\nuse PHPUnit\\Framework\\Attributes\\Group;\n\n#[Group('localization')]\nclass FfMrTest extends LocalizationTestCase\n{\n    public const LOCALE = 'ff_MR'; // Fulah\n\n    public const CASES = [\n        // Carbon::parse('2018-01-04"
+    },
+    {
+      "true": "PHP",
+      "pred": "Rust",
+      "repo": "briannesbitt/Carbon",
+      "path": "tests/Localization/EsEsTest.php",
+      "text": " */\n\nnamespace Tests\\Localization;\n\nuse PHPUnit\\Framework\\Attributes\\Group;\n\n#[Group('localization')]\nclass EsEsTest extends LocalizationTestCase\n{\n    public const LOCALE = 'es_ES'; // Spanish\n\n    public const CASES = [\n        // Carbon::parse('2018-01-"
+    },
+    {
+      "true": "PHP",
+      "pred": "JavaScript",
+      "repo": "guzzle/guzzle",
+      "path": "src/Handler/CurlMultiHandler.php",
+      "text": " * Returns an asynchronous response using curl_multi_* functions.\n *\n * When using the CurlMultiHandler, custom curl options can be specified as an\n * associative array of curl option constants mapping to values in the\n * **curl** key of the provided reque"
+    },
+    {
+      "true": "PHP",
+      "pred": "Rust",
+      "repo": "guzzle/guzzle",
+      "path": "src/RequestOptions.php",
+      "text": "final class RequestOptions\n{\n    /**\n     * allow_redirects: (bool|array) Controls redirect behavior. Pass false\n     * to disable redirects, pass true to enable redirects, pass an\n     * associative to provide custom redirect settings. Defaults to \"false\""
+    },
+    {
+      "true": "PHP",
+      "pred": "C#",
+      "repo": "briannesbitt/Carbon",
+      "path": "src/Carbon/CarbonInterface.php",
+      "text": "use Carbon\\Exceptions\\ImmutableException;\nuse Carbon\\Exceptions\\InvalidDateException;\nuse Carbon\\Exceptions\\InvalidFormatException;\nuse Carbon\\Exceptions\\UnknownGetterException;\nuse Carbon\\Exceptions\\UnknownMethodException;\nuse Carbon\\Exceptions\\UnknownSet"
+    },
+    {
+      "true": "PHP",
+      "pred": "C",
+      "repo": "briannesbitt/Carbon",
+      "path": "src/Carbon/Traits/Difference.php",
+      "text": " */\n\nnamespace Carbon\\Traits;\n\nuse Carbon\\Carbon;\nuse Carbon\\CarbonImmutable;\nuse Carbon\\CarbonInterface;\nuse Carbon\\CarbonInterval;\nuse Carbon\\CarbonPeriod;\nuse Carbon\\Exceptions\\UnknownUnitException;\nuse Carbon\\Unit;\nuse Closure;\nuse DateInterval;\nuse Da"
+    },
+    {
+      "true": "PHP",
+      "pred": "JavaScript",
+      "repo": "briannesbitt/Carbon",
+      "path": "src/Carbon/Lang/bg.php",
+      "text": " * - Josh Soref\n * - Fran\u00e7ois B\n * - Serhan Apayd\u0131n\n * - JD Isaacks\n * - Glavi\u0107\n */\n\nuse Carbon\\CarbonInterface;\n\nreturn [\n    'year' => ':count \u0433\u043e\u0434\u0438\u043d\u0430|:count \u0433\u043e\u0434\u0438\u043d\u0438',\n    'a_year' => '\u0433\u043e\u0434\u0438\u043d\u0430|:count \u0433\u043e\u0434\u0438\u043d\u0438',\n    'y' => ':count \u0433\u043e\u0434\u0438\u043d\u0430|:count \u0433\u043e\u0434\u0438\u043d\u0438',\n    'm"
+    },
+    {
+      "true": "PHP",
+      "pred": "Rust",
+      "repo": "briannesbitt/Carbon",
+      "path": "tests/Localization/EnScTest.php",
+      "text": " */\n\nnamespace Tests\\Localization;\n\nuse PHPUnit\\Framework\\Attributes\\Group;\n\n#[Group('localization')]\nclass EnScTest extends LocalizationTestCase\n{\n    public const LOCALE = 'en_SC'; // English\n\n    public const CASES = [\n        // Carbon::parse('2018-01-"
+    },
+    {
+      "true": "PHP",
+      "pred": "C#",
+      "repo": "briannesbitt/Carbon",
+      "path": "tests/Carbon/Exceptions/ParseErrorExceptionTest.php",
+      "text": "namespace Tests\\Carbon\\Exceptions;\n\nuse Carbon\\Exceptions\\ParseErrorException;\nuse Tests\\AbstractTestCase;\n\nclass ParseErrorExceptionTest extends AbstractTestCase\n{\n    public function testParseErrorException(): void\n    {\n        $exception = new ParseErr"
+    },
+    {
+      "true": "PHP",
+      "pred": "Ruby",
+      "repo": "briannesbitt/Carbon",
+      "path": "src/Carbon/Lang/en_IL.php",
+      "text": " * - Yoav Amit\n * - Fran\u00e7ois B\n * - Mayank Badola\n * - JD Isaacks\n */\nreturn array_replace_recursive(require __DIR__.'/en.php', [\n    'from_now' => 'in :time',\n    'formats' => [\n        'LT' => 'HH:mm',\n        'LTS' => 'HH:mm:ss',\n        'L' => 'DD/MM/Y"
+    },
+    {
+      "true": "PHP",
+      "pred": "Rust",
+      "repo": "briannesbitt/Carbon",
+      "path": "tests/Localization/LnCgTest.php",
+      "text": " */\n\nnamespace Tests\\Localization;\n\nuse PHPUnit\\Framework\\Attributes\\Group;\n\n#[Group('localization')]\nclass LnCgTest extends LocalizationTestCase\n{\n    public const LOCALE = 'ln_CG'; // Lingala\n\n    public const CASES = [\n        // Carbon::parse('2018-01-"
+    },
+    {
+      "true": "PHP",
+      "pred": "Go",
+      "repo": "guzzle/guzzle",
+      "path": "src/MessageFormatter.php",
+      "text": " * and other transactional data.\n *\n * The following variable substitutions are supported:\n *\n * - {request}:        Full HTTP request message\n * - {response}:       Full HTTP response message\n * - {ts}:             ISO 8601 date in GMT\n * - {date_iso_8601"
+    },
+    {
+      "true": "PHP",
+      "pred": "Ruby",
+      "repo": "briannesbitt/Carbon",
+      "path": "src/Carbon/Lang/my.php",
+      "text": "    'm' => ':count \u101c',\n    'week' => ':count \u1015\u1010\u103a',\n    'w' => ':count \u1015\u1010\u103a',\n    'day' => ':count \u101b\u1000\u103a',\n    'a_day' => '{1}\u1010\u1005\u103a\u101b\u1000\u103a|[-Inf,Inf]:count \u101b\u1000\u103a',\n    'd' => ':count \u101b\u1000\u103a',\n    'hour' => ':count \u1014\u102c\u101b\u102e',\n    'a_hour' => '{1}\u1010\u1005\u103a\u1014\u102c\u101b\u102e|[-Inf,Inf]:count \u1014\u102c\u101b\u102e'"
+    },
+    {
+      "true": "PHP",
+      "pred": "JavaScript",
+      "repo": "guzzle/guzzle",
+      "path": "tests/Handler/StreamHandlerTest.php",
+      "text": " */\nclass StreamHandlerTest extends TestCase\n{\n    private function queueRes()\n    {\n        Server::flush();\n        Server::enqueue([\n            new Response(200, [\n                'Foo' => 'Bar',\n                'Content-Length' => 8,\n            ], 'h"
+    },
+    {
+      "true": "PHP",
+      "pred": "Python",
+      "repo": "guzzle/guzzle",
+      "path": "tests/UtilsTest.php",
+      "text": "    public function typeProvider()\n    {\n        return [\n            ['foo', 'string(3) \"foo\"'],\n            [true, 'bool(true)'],\n            [false, 'bool(false)'],\n            [10, 'int(10)'],\n            [1.0, 'float(1)'],\n            [new StrClass(),"
+    },
+    {
+      "true": "PHP",
+      "pred": "C",
+      "repo": "briannesbitt/Carbon",
+      "path": "src/Carbon/CarbonInterface.php",
+      "text": " */\n\nnamespace Carbon;\n\nuse BadMethodCallException;\nuse Carbon\\Constants\\DiffOptions;\nuse Carbon\\Constants\\Format;\nuse Carbon\\Constants\\TranslationOptions;\nuse Carbon\\Constants\\UnitValue;\nuse Carbon\\Exceptions\\BadComparisonUnitException;\nuse Carbon\\Excepti"
+    },
+    {
+      "true": "PHP",
+      "pred": "JavaScript",
+      "repo": "guzzle/guzzle",
+      "path": "tests/RedirectMiddlewareTest.php",
+      "text": "use GuzzleHttp\\Psr7\\Request;\nuse GuzzleHttp\\Psr7\\Response;\nuse GuzzleHttp\\RedirectMiddleware;\nuse PHPUnit\\Framework\\TestCase;\nuse Psr\\Http\\Message\\RequestInterface;\n\n/**\n * @covers \\GuzzleHttp\\RedirectMiddleware\n */\nclass RedirectMiddlewareTest extends Tes"
+    },
+    {
+      "true": "PHP",
+      "pred": "Rust",
+      "repo": "briannesbitt/Carbon",
+      "path": "tests/Localization/NhnMxTest.php",
+      "text": " */\n\nnamespace Tests\\Localization;\n\nuse PHPUnit\\Framework\\Attributes\\Group;\n\n#[Group('localization')]\nclass NhnMxTest extends LocalizationTestCase\n{\n    public const LOCALE = 'nhn_MX'; // Central Nahuatl\n\n    public const CASES = [\n        // Carbon::parse"
+    },
+    {
+      "true": "PHP",
+      "pred": "C#",
+      "repo": "guzzle/guzzle",
+      "path": "src/Cookie/FileCookieJar.php",
+      "text": "     * @var bool Control whether to persist session cookies or not.\n     */\n    private $storeSessionCookies;\n\n    /**\n     * Create a new FileCookieJar object\n     *\n     * @param string $cookieFile          File to store the cookie data\n     * @param boo"
+    },
+    {
+      "true": "PHP",
+      "pred": "JavaScript",
+      "repo": "guzzle/guzzle",
+      "path": "src/TransferStats.php",
+      "text": "     * @var array\n     */\n    private $handlerStats;\n\n    /**\n     * @var mixed|null\n     */\n    private $handlerErrorData;\n\n    /**\n     * @param RequestInterface       $request          Request that was sent.\n     * @param ResponseInterface|null $respons"
+    },
+    {
+      "true": "PHP",
+      "pred": "JavaScript",
+      "repo": "guzzle/guzzle",
+      "path": "src/Handler/StreamHandler.php",
+      "text": " * HTTP handler that uses PHP's HTTP stream wrapper.\n *\n * @final\n */\nclass StreamHandler\n{\n    /**\n     * @var array\n     */\n    private $lastHeaders = [];\n\n    /**\n     * Sends an HTTP request.\n     *\n     * @param RequestInterface $request Request to se"
+    },
+    {
+      "true": "Rust",
+      "pred": "C++",
+      "repo": "BurntSushi/ripgrep",
+      "path": "crates/globset/benches/bench.rs",
+      "text": "const EXT: &'static str = \"some/a/bigger/path/to/the/crazy/needle.txt\";\nconst EXT_PAT: &'static str = \"*.txt\";\n\nconst SHORT: &'static str = \"some/needle.txt\";\nconst SHORT_PAT: &'static str = \"some/**/needle.txt\";\n\nconst LONG: &'static str = \"some/a/bigger/"
+    },
+    {
+      "true": "Rust",
+      "pred": "Ruby",
+      "repo": "clap-rs/clap",
+      "path": "clap_complete_nushell/tests/common.rs",
+      "text": "            Arg::new(\"config\")\n                .short('c')\n                .global(true)\n                .action(ArgAction::SetTrue),\n        )\n        .arg(\n            Arg::new(\"v\")\n                .short('v')\n                .conflicts_with(\"config\")\n  "
+    },
+    {
+      "true": "Rust",
+      "pred": "Python",
+      "repo": "BurntSushi/ripgrep",
+      "path": "crates/globset/src/lib.rs",
+      "text": "matched. For example, given this set of globs:\n\n* `*.rs`\n* `src/lib.rs`\n* `src/**/foo.rs`\n\nand a path `src/bar/baz/foo.rs`, then the set would report the first and third\nglobs as matching.\n\n# Example: one glob\n\nThis example shows how to match a single glob"
+    },
+    {
+      "true": "Rust",
+      "pred": "Python",
+      "repo": "BurntSushi/ripgrep",
+      "path": "crates/globset/src/lib.rs",
+      "text": "/*!\nThe globset crate provides cross platform single glob and glob set matching.\n\nGlob set matching is the process of matching one or more glob patterns against\na single candidate path simultaneously, and returning all of the globs that\nmatched. For exampl"
+    },
+    {
+      "true": "Rust",
+      "pred": "Python",
+      "repo": "BurntSushi/ripgrep",
+      "path": "crates/core/search.rs",
+      "text": "/*!\nDefines a very high level \"search worker\" abstraction.\n\nA search worker manages the high level interaction points between the matcher\n(i.e., which regex engine is used), the searcher (i.e., how data is actually\nread and matched using the regex engine) "
+    },
+    {
+      "true": "Rust",
+      "pred": "C#",
+      "repo": "BurntSushi/ripgrep",
+      "path": "crates/core/flags/hiargs.rs",
+      "text": "        BinaryMode, BoundaryMode, BufferMode, CaseMode, ColorChoice,\n        ContextMode, ContextSeparator, EncodingMode, EngineChoice,\n        FieldContextSeparator, FieldMatchSeparator, LowArgs, MmapMode, Mode,\n        PatternSource, SearchMode, SortMode"
+    },
+    {
+      "true": "C#",
+      "pred": "Go",
+      "repo": "restsharp/RestSharp",
+      "path": "test/RestSharp.Tests/RestClientTests.cs",
+      "text": "    [InlineData(Method.Post, Method.Get)]\n    [InlineData(Method.Delete, Method.Get)]\n    [InlineData(Method.Head, Method.Post)]\n    [InlineData(Method.Put, Method.Patch)]\n    [InlineData(Method.Patch, Method.Put)]\n    [InlineData(Method.Post, Method.Put)]"
+    },
+    {
+      "true": "C#",
+      "pred": "JavaScript",
+      "repo": "AutoMapper/AutoMapper",
+      "path": "src/UnitTests/Bug/ConvertMapperThreading.cs",
+      "text": "            await Task.WhenAll(tasks);\n        }\n        catch(AggregateException ex)\n        {\r\n            ex.Handle(e =>\r\n            {\r\n                if(e is InvalidOperationException)\r\n                {\r\n                    throw e;\r\n               "
+    }
+  ]
+}

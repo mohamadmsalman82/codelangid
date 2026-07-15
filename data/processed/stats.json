@@ -1,0 +1,75 @@
+{
+  "labels": [
+    "C",
+    "C#",
+    "C++",
+    "Go",
+    "Java",
+    "JavaScript",
+    "PHP",
+    "Python",
+    "Ruby",
+    "Rust"
+  ],
+  "source_files": 18654,
+  "dropped": {
+    "drop_tiny_file": 1125,
+    "drop_mostly_comment": 3460,
+    "drop_exact_dup": 327
+  },
+  "dropped_near_dup": 353,
+  "cap_per_class": 1036,
+  "n_tasks": {
+    "train": 1162,
+    "val": 249,
+    "test": 250
+  },
+  "counts": {
+    "raw_train": 7225,
+    "raw_test": 1501,
+    "raw_val": 1634,
+    "nocomment_train": 7160,
+    "nocomment_test": 1491,
+    "nocomment_val": 1620
+  },
+  "per_class": {
+    "train": {
+      "Python": 737,
+      "Java": 742,
+      "C++": 717,
+      "JavaScript": 707,
+      "Go": 700,
+      "C": 725,
+      "Ruby": 713,
+      "PHP": 753,
+      "Rust": 703,
+      "C#": 728
+    },
+    "test": {
+      "Python": 141,
+      "Java": 146,
+      "C++": 154,
+      "JavaScript": 146,
+      "Go": 171,
+      "C": 150,
+      "Ruby": 161,
+      "PHP": 123,
+      "Rust": 162,
+      "C#": 147
+    },
+    "val": {
+      "Python": 158,
+      "Java": 148,
+      "C++": 165,
+      "JavaScript": 183,
+      "Go": 165,
+      "C": 161,
+      "Ruby": 162,
+      "PHP": 160,
+      "Rust": 171,
+      "C#": 161
+    }
+  },
+  "window": 256,
+  "seed": 360
+}
