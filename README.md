@@ -81,9 +81,10 @@ directory structure rather than a guess.
 | 7 | Split **by task** 70/15/15 (no task spans two splits) | — | 7,225 / 1,634 / 1,501 |
 | 8 | Encode: vocab V=102 (ASCII + `<pad>` + `<unk>`), pad/truncate to 256 | — | — |
 
-Splitting is by *task*, not by file — otherwise two solutions to "Bubble sort" land in
-both train and test and inflate accuracy. Every snippet is emitted in two variants
-(`raw` and `nocomment`) to test how much the model leans on comment prose.
+Splitting is by *task*, not by file, so two solutions to "Bubble sort" cannot straddle train
+and test. (Measured, this matters less than expected — see the leakage finding below.) Snippets
+are emitted as `raw` and, where they still clear the 64-char floor, `nocomment` (10,271), to
+test how much the model leans on comment prose.
 
 ## Two findings worth knowing
 
@@ -115,9 +116,10 @@ PHP's F1 collapses from 0.97 in-distribution to 0.66 held-out.
 ## Layout
 
 ```
-src/      build_dataset.py, scrape_heldout.py, baseline.py, cnn.py, gru.py, figures.py
+src/      build_dataset.py, scrape_heldout.py, baseline.py, cnn.py, gru.py,
+          leakage_experiment.py, figures.py
 data/     processed/*.jsonl (committed), raw corpora (not committed)
-results/  baseline.json, cnn_{raw,nocomment}.json, gru_raw.json
+results/  baseline.json, cnn_{raw,nocomment}.json, gru_raw.json, leakage_experiment.json
 figures/  fig_pipeline, fig_confusion (pdf + png)
 report/   progress_report.tex -> progress_report.pdf
 ```
