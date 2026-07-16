@@ -69,7 +69,7 @@ def arrow(ax, x1, y1, x2, y2):
 
 # ------------------------------------------------------------ Fig 1: pipeline
 def fig_pipeline():
-    fig, ax = plt.subplots(figsize=(6.6, 2.05))
+    fig, ax = plt.subplots(figsize=(5.5, 1.08))
     ax.set_xlim(-0.02, 1.02); ax.set_ylim(-0.02, 1.02); ax.axis("off"); ax.grid(False)
 
     box(ax, 0.005, 0.30, 0.135, 0.40,
@@ -116,7 +116,7 @@ def fig_pipeline():
 def fig_curves():
     h = json.loads((RES / "cnn_raw.json").read_text())["history"]
     ep = np.arange(1, len(h["train_loss"]) + 1)
-    fig, axes = plt.subplots(1, 2, figsize=(6.6, 2.2))
+    fig, axes = plt.subplots(1, 2, figsize=(5.5, 1.24))
 
     for ax, (a, b, name, lo) in zip(axes, [
             ("train_loss", "val_loss", "Cross-entropy loss", None),
@@ -151,16 +151,16 @@ def fig_curves():
 def fig_confusion():
     d = json.loads((RES / "cnn_raw.json").read_text())
     labels = d["labels"]
-    fig, axes = plt.subplots(1, 2, figsize=(6.6, 2.9))
+    fig, axes = plt.subplots(1, 2, figsize=(5.5, 1.72))
     for ax, split, title in zip(axes, ["test", "heldout"], [
             f"(a) Rosetta test  ·  acc {d['test']['accuracy']*100:.1f}%",
             f"(b) GitHub held-out  ·  acc {d['heldout']['accuracy']*100:.1f}%"]):
         cm = np.array(d[split]["confusion"], dtype=float)
         cm = cm / cm.sum(axis=1, keepdims=True)
         ax.imshow(cm, cmap=BLUES, vmin=0, vmax=1)
-        ax.set_xticks(range(len(labels)), labels, rotation=90, fontsize=5.5)
-        ax.set_yticks(range(len(labels)), labels, fontsize=5.5)
-        ax.set_title(title, fontsize=7, color=INK, pad=6)
+        ax.set_xticks(range(len(labels)), labels, rotation=90, fontsize=5)
+        ax.set_yticks(range(len(labels)), labels, fontsize=5)
+        ax.set_title(title, fontsize=6.5, color=INK, pad=3)
         ax.set_xlabel("predicted", fontsize=6.5)
         ax.grid(False)
         if split == "test":
@@ -173,8 +173,7 @@ def fig_confusion():
                             fontsize=4.6, color="white" if v > 0.5 else SECOND)
         for s in ax.spines.values():
             s.set_visible(False)
-    fig.text(0.5, -0.02, "cell = % of true-class snippets predicted as column "
-             "(row-normalised)", ha="center", fontsize=6, color=MUTED)
+    fig.subplots_adjust(wspace=0.02)
     fig.tight_layout()
     for ext in ("pdf", "png"):
         fig.savefig(FIG / f"fig_confusion.{ext}", bbox_inches="tight", dpi=200)
