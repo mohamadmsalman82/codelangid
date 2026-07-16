@@ -58,7 +58,7 @@ def box(ax, x, y, w, h, text, fc=SURFACE, ec=AXIS, fs=6.5, tc=INK, bold=False):
                                 boxstyle="round,pad=0.008,rounding_size=0.02",
                                 fc=fc, ec=ec, lw=0.9, zorder=2))
     ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=fs,
-            color=tc, zorder=3, linespacing=1.35,
+            color=tc, zorder=3, linespacing=1.15,
             fontweight="bold" if bold else "normal")
 
 
@@ -69,43 +69,55 @@ def arrow(ax, x1, y1, x2, y2):
 
 # ------------------------------------------------------------ Fig 1: pipeline
 def fig_pipeline():
-    fig, ax = plt.subplots(figsize=(5.5, 1.08))
+    fig, ax = plt.subplots(figsize=(5.5, 1.40))
     ax.set_xlim(-0.02, 1.02); ax.set_ylim(-0.02, 1.02); ax.axis("off"); ax.grid(False)
 
-    box(ax, 0.005, 0.30, 0.135, 0.40,
-        "INPUT\nraw snippet\n\n$\\mathtt{def\\ add(a,b):}$\n$\\mathtt{\\ \\ return\\ a+b}$",
+    box(ax, 0.005, 0.16, 0.135, 0.68,
+        "INPUT\nraw snippet\n$\\mathtt{def\\ add(a,b):}$\n$\\mathtt{\\ \\ return\\ a+b}$",
         fs=6, tc=SECOND)
     arrow(ax, 0.142, 0.50, 0.163, 0.50)
 
-    box(ax, 0.165, 0.34, 0.115, 0.32,
+    box(ax, 0.165, 0.23, 0.115, 0.54,
         "Char encode\n256 chars\npad / truncate\nvocab $V{=}102$", fs=6)
     arrow(ax, 0.282, 0.50, 0.303, 0.50)
 
-    box(ax, 0.305, 0.34, 0.105, 0.32, "Embedding\n$256\\times32$\nlearned", fs=6)
-    arrow(ax, 0.412, 0.50, 0.437, 0.50)
+    box(ax, 0.305, 0.28, 0.105, 0.44, "Embedding\n$256\\times32$\nlearned", fs=6)
 
     # three parallel conv branches
-    for i, (k, y) in enumerate([(3, 0.70), (5, 0.40), (7, 0.10)]):
-        box(ax, 0.44, y, 0.115, 0.22, f"Conv1D $k{{=}}{k}$\n128 filters + ReLU",
+    for i, (k, y) in enumerate([(3, 0.70), (5, 0.37), (7, 0.04)]):
+        box(ax, 0.435, y, 0.135, 0.26, f"Conv1D $k{{=}}{k}$\n128 filters + ReLU",
             fs=5.8, ec=BLUE)
-        arrow(ax, 0.437, 0.50, 0.44, y + 0.11)
-        arrow(ax, 0.557, y + 0.11, 0.60, 0.50)
-    ax.text(0.4975, 0.955, "parallel branches", ha="center", fontsize=5.5,
+        arrow(ax, 0.412, 0.50, 0.435, y + 0.13)
+        arrow(ax, 0.570, y + 0.13, 0.60, 0.50)
+    ax.text(0.5025, 0.985, "parallel branches", ha="center", fontsize=5.5,
             color=BLUE, style="italic")
 
-    box(ax, 0.60, 0.34, 0.105, 0.32, "Global\nmax-pool\n+ concat\n(384)", fs=6)
+    box(ax, 0.60, 0.23, 0.105, 0.54, "Global\nmax-pool\n+ concat\n(384)", fs=6)
     arrow(ax, 0.707, 0.50, 0.728, 0.50)
 
-    box(ax, 0.73, 0.34, 0.10, 0.32, "Dropout 0.5\nFC $384{\\rightarrow}10$\nsoftmax", fs=6)
+    box(ax, 0.73, 0.28, 0.10, 0.44, "Dropout 0.5\nFC $384{\\rightarrow}10$\nsoftmax", fs=6)
     arrow(ax, 0.832, 0.50, 0.853, 0.50)
 
-    box(ax, 0.855, 0.30, 0.14, 0.40,
-        "OUTPUT\n$P(\\mathrm{lang}\\mid\\mathrm{snippet})$\n\nPython  0.96\nRuby    0.02",
+    box(ax, 0.855, 0.16, 0.14, 0.68,
+        "OUTPUT\n$P(\\mathrm{lang}\\mid\\mathrm{snippet})$\nPython  0.96\nRuby    0.02",
         fs=6, ec=GREEN, tc=SECOND)
 
-    ax.text(0.5, -0.06, "68,938 trainable parameters  ·  trained from scratch",
+    ax.text(0.5, -0.10, "68,938 trainable parameters  ·  trained from scratch",
             ha="center", fontsize=6, color=MUTED, style="italic")
     fig.tight_layout()
+
+    # guard: every label must sit inside its own box (this figure regressed once)
+    fig.canvas.draw()
+    r = fig.canvas.get_renderer()
+    boxes = [p for p in ax.patches if isinstance(p, FancyBboxPatch)]
+    for t in ax.texts:
+        tb = t.get_window_extent(renderer=r)
+        inside = [b for b in boxes
+                  if b.get_window_extent(r).x0 <= tb.x0 and b.get_window_extent(r).x1 >= tb.x1
+                  and b.get_window_extent(r).y0 <= tb.y0 and b.get_window_extent(r).y1 >= tb.y1]
+        if not inside and t.get_text() not in ("parallel branches",
+                "68,938 trainable parameters  ·  trained from scratch"):
+            raise AssertionError(f"label escapes its box: {t.get_text()[:40]!r}")
     for ext in ("pdf", "png"):
         fig.savefig(FIG / f"fig_pipeline.{ext}", bbox_inches="tight", dpi=200)
     plt.close(fig)
@@ -151,15 +163,15 @@ def fig_curves():
 def fig_confusion():
     d = json.loads((RES / "cnn_raw.json").read_text())
     labels = d["labels"]
-    fig, axes = plt.subplots(1, 2, figsize=(5.5, 1.72))
+    fig, axes = plt.subplots(1, 2, figsize=(5.5, 1.58))
     for ax, split, title in zip(axes, ["test", "heldout"], [
             f"(a) Rosetta test  ·  acc {d['test']['accuracy']*100:.1f}%",
             f"(b) GitHub held-out  ·  acc {d['heldout']['accuracy']*100:.1f}%"]):
         cm = np.array(d[split]["confusion"], dtype=float)
         cm = cm / cm.sum(axis=1, keepdims=True)
-        ax.imshow(cm, cmap=BLUES, vmin=0, vmax=1)
-        ax.set_xticks(range(len(labels)), labels, rotation=90, fontsize=5)
-        ax.set_yticks(range(len(labels)), labels, fontsize=5)
+        ax.imshow(cm, cmap=BLUES, vmin=0, vmax=1, aspect="auto")
+        ax.set_xticks(range(len(labels)), labels, rotation=90, fontsize=5.5)
+        ax.set_yticks(range(len(labels)), labels, fontsize=5.5)
         ax.set_title(title, fontsize=6.5, color=INK, pad=3)
         ax.set_xlabel("predicted", fontsize=6.5)
         ax.grid(False)
@@ -170,7 +182,7 @@ def fig_confusion():
                 v = cm[i, j]
                 if v >= 0.01:
                     ax.text(j, i, f"{v*100:.0f}", ha="center", va="center",
-                            fontsize=4.6, color="white" if v > 0.5 else SECOND)
+                            fontsize=5, color="white" if v > 0.5 else SECOND)
         for s in ax.spines.values():
             s.set_visible(False)
     fig.subplots_adjust(wspace=0.02)

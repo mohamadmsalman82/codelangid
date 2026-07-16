@@ -1,0 +1,17 @@
+{
+  "note": "Same data, cleaning, model and seed; only the split differs.",
+  "by_task": {
+    "train_n": 7225,
+    "test_n": 1501,
+    "accuracy": 0.9013990672884743
+  },
+  "by_snippet": {
+    "train_n": 7225,
+    "test_n": 1501,
+    "accuracy": 0.9033977348434377
+  },
+  "contaminated_test_snippets": 1454,
+  "contaminated_fraction": 0.9686875416389074,
+  "inflation_points": 0.19986675549633626,
+  "seed": 360
+}

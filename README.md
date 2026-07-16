@@ -47,6 +47,7 @@ python3 src/scrape_heldout.py   # 740 never-before-seen snippets from 24 GitHub 
 python3 src/baseline.py         # TF-IDF + Naive Bayes baseline
 python3 src/cnn.py --variant raw        # primary char-CNN
 python3 src/gru.py --variant raw        # BiGRU comparison (slow: ~11 min)
+python3 src/leakage_experiment.py       # by-task vs by-snippet split
 python3 src/figures.py          # report figures
 ```
 
@@ -90,6 +91,19 @@ both train and test and inflate accuracy. Every snippet is emitted in two varian
 points (92.74 → 92.49). The bag-of-n-grams baseline behaves oppositely — removing
 comments *improves* its held-out score by 2.30 points (79.59 → 81.89) — so comment
 prose actively misleads it on real-world code while the CNN is largely immune.
+
+**The by-task split turned out not to be what prevents leakage.** I split by task assuming a
+per-snippet split would leak near-identical Rosetta variants across train/test. Measuring it
+(`src/leakage_experiment.py`) showed near-dup removal had already closed that gap: a per-snippet
+split moves the baseline only +0.20 points and the CNN +0.00, even though 96.9% of its test
+snippets share a task with train. The by-task split is still the defensible default, but the
+dedup is what does the work.
+
+**Reproducibility caveat.** `build_dataset.py`, `scrape_heldout.py` and `baseline.py` are
+deterministic. The CNN is not: MPS lacks deterministic kernels, so eight reruns of the committed
+seeded configuration span 91.0–92.7 on test (mean 92.2). The reported 92.74 is the committed run.
+The CNN beat the baseline in 8/8 reruns (worst margin +0.87), so the ranking is robust even where
+the exact figure is not.
 
 **PHP → Rust is a textbook distribution shift.** 13 of the 16 PHP→Rust errors contain
 the token `#[`. In training, `#[` appears in 0.0% of PHP snippets (0/753) but 9.0% of
