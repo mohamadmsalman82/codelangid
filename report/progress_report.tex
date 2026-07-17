@@ -78,9 +78,8 @@ a fixed 256-character window. \textbf{Output}: a probability for each of the 10 
 \vspace{-4pt}
 
 This is a \textbf{solo project}. There are no other team members, so every item in
-Table~\ref{tab:contrib} is my own work and every responsibility is mine. All the code is in
-\texttt{src/} with a fixed seed (360), and every number here regenerates from a fresh checkout---
-except the CNN, whose results move slightly from run to run (\S\ref{sec:qual}).
+Table~\ref{tab:contrib} is my own work and every responsibility is mine. All the code is in \texttt{src/} with a fixed seed (360), and every number here regenerates from a
+fresh checkout---except the CNN's, which moves a little from run to run (\S\ref{sec:qual}).
 
 \begin{table}[h]
 \centering\scriptsize
@@ -115,11 +114,10 @@ a char-CNN that beats it, and a test set I collected myself that showed exactly 
 \textbf{Source.} Rosetta Code \citep{rosettacode} (via the \texttt{acmeism/RosettaCodeData} mirror)
 solves the same tasks in many languages, and each solution sits in a folder named after its language,
 so the labels come free. Table~\ref{tab:clean} lists every cleaning step and what it removed, in
-enough detail for a classmate to redo (\texttt{src/build\_dataset.py}, seed 360). Two steps matter
-most: \emph{removing near-duplicates}, because Rosetta often stores several almost-identical versions
-of one solution; and \emph{splitting by task rather than by file}, so all snippets from one task stay
-in one split. I save each snippet twice---\texttt{raw}, and \texttt{nocomment} with comments removed
-(10{,}271 clear the 64-character floor)---to see whether the model reads the code or the comments.
+enough detail for a classmate to redo (\texttt{src/build\_dataset.py}, seed 360). Two steps matter most: \emph{removing near-duplicates}, since Rosetta often stores several
+almost-identical versions of one solution, and \emph{splitting by task rather than by file}. I save
+each snippet twice---\texttt{raw}, and \texttt{nocomment} with comments stripped (10{,}271 clear the
+64-character floor)---to see whether the model reads the code or the comments.
 
 \begin{table}[h]
 \centering\scriptsize
@@ -156,19 +154,19 @@ libc.strcmp("abc", "def")     # -1
 libc.strcmp("hello", "hello") #  0
 \end{lstlisting}
 
-\textbf{Plan for never-before-seen data.} Instead of reusing a public dataset, I collected the final
+\textbf{Plan for never-before-seen data.} Instead of reusing a public dataset I collected the final
 test set myself (\texttt{src/scrape\_heldout.py}): \textbf{740 snippets from 24 real GitHub
-repositories}, 74 per language, cleaned the same way. None has any link to Rosetta Code, and it is
+repositories}, 74 per language, cleaned the same way. None links to Rosetta Code, and it is
 deliberately a different \emph{kind} of code---real library code, not puzzle answers. I checked every
-snippet against every training snippet: \textbf{none overlap}, and the model never trains or tunes
-on it.
+snippet against every training snippet: \textbf{none overlap}, and the model never trains on it.
 
 \textbf{Challenges.} (i) Rosetta has little PHP (645 files vs.\ Python's 3{,}054), and since I keep
 the classes balanced, that shortage drags \emph{every} class down to 1{,}036---the main limit on
-dataset size. (ii) I split by task assuming a per-snippet split would let the model see the same
-solution twice. I measured it (\texttt{src/leakage\_experiment.py}) and I was wrong: it changes the
-baseline by only $+0.20$ and the CNN not at all---removing near-duplicates had already solved it. I
-kept the by-task split as the safer choice. (iii) My comment remover works line by line, so it wrongly deletes text inside strings containing
+dataset size. (ii) I split by task assuming a per-snippet split would let the model memorise the same solution
+twice. I measured it (\texttt{src/leakage\_experiment.py}) and I was wrong: 96.9\% of a per-snippet
+test set does share a task with training, yet the deterministic baseline gains only $+0.20$ points
+from it, and the CNN's gain sits inside its own run-to-run noise (\S\ref{sec:qual}). Near-duplicate
+removal had already closed the gap. I kept the by-task split as the safer choice. (iii) My comment remover works line by line, so it wrongly deletes text inside strings containing
 \texttt{//} or \texttt{\#}, and in C deletes \texttt{\#include}/\texttt{\#define}, which are real
 code. That hurts the no-comment score rather than helping, so the 92.49 below is if anything too low
 and my conclusion is safe. Fixed for the final.
@@ -186,9 +184,9 @@ character counting already does most of the job, so the CNN has to earn the rest
 \textbf{Qualitative (baseline).} Its GitHub mistakes are about English, not code. It calls PHP
 \textsc{C\#} \textbf{34 times out of 74} and gets PHP right only \textbf{26}, though it never mixes
 those two up on Rosetta. Java is called Python 24 times and C is called Python 20 times, for the same
-reason: when a snippet is mostly an English comment, a word-counting model drifts toward whichever
-language had the most English in training. \textbf{Challenge:} no tuning fixes this, because the
-problem is what the model looks at, not its settings. That is the gap the CNN closes.
+reason: when a snippet is mostly English comment, a word-counting model drifts toward whichever
+language had the most English in training. \textbf{Challenge:} no tuning fixes this---the problem is
+what the model looks at, not its settings. That is the gap the CNN closes.
 
 \vspace{-6pt}
 \subsection{Primary Model}
@@ -203,14 +201,15 @@ gives the answer. Three widths side by side, rather than one deep stack, let it 
 7-character clues at once. It has \textbf{68,938 trainable parameters} across 5 weight layers, trained from scratch with
 cross-entropy loss and Adam \citep{kingma2015adam} (learning rate $10^{-3}$, batch 64, at most 30
 epochs, stopping once validation accuracy has not improved for 6), in \textbf{35 seconds} on an Apple
-M-series GPU. Validation loss stops improving around epoch 10 and the curves separate after
-12---the model is starting to memorise---so early stopping halted at 25 and kept \textbf{epoch 19}.
+M-series GPU. Its training and validation accuracy curves drift apart as it trains---0.7 points at epoch 10, 4.7
+by epoch 25---so it is slowly memorising. Early stopping on validation accuracy caught that: it
+halted at 25 and kept \textbf{epoch 19}.
 
 I also built the bidirectional GRU I promised in the proposal (\texttt{src/gru.py}; 42{,}186
-parameters). \textbf{It did not work out}---the most useful thing I have learned so far: 90.27\% on
-test, no better than Naive Bayes, for \textbf{647 seconds of training, 18 times the CNN}. In
-hindsight that makes sense: what gives a language away in 256 characters are short local patterns,
-so a model built to track long-range order pays for something this task never uses.
+parameters). \textbf{It did not work out}, and it is the most useful thing I have learned so far:
+90.27\% on test, no better than Naive Bayes, for \textbf{647 seconds of training, 18 times the CNN}.
+What gives a language away in 256 characters are short local patterns, so a model built to track
+long-range order pays for something this task never uses.
 
 \begin{figure}[t]
 \centering
@@ -227,16 +226,16 @@ dominate (\S\ref{sec:qual}).}
 \label{sec:qual}
 \vspace{-4pt}
 
-\textbf{Quantitative.} The char-CNN is the best model on every split (Table~\ref{tab:results}). It
-gets \textbf{92.74\%} on the Rosetta test set (macro-F1 0.927, loss 0.238), beating the baseline by
-\textbf{2.60 points}, and \textbf{82.84\%} on the GitHub set it has never seen (macro-F1 0.822, loss
-0.495), beating it by \textbf{3.24}.
+\textbf{Quantitative.} The char-CNN is the best model on every split (Table~\ref{tab:results}):
+\textbf{92.74\%} on the Rosetta test set (macro-F1 0.927, loss 0.238) against the baseline's 90.14,
+and \textbf{82.84\%} on the never-before-seen GitHub set (macro-F1 0.822, loss 0.495) against 79.59
+---so it wins by \textbf{2.6 points} in-distribution and \textbf{3.2} out of it.
 
 \begin{table}[h]
 \centering\scriptsize
 \caption{All models on both test sets (accuracy \%; chance 10\%). Best test / held-out in bold;
-\texttt{ft} $=$ n-gram features, not learned weights. CNN rows are the committed run
-(\S\ref{sec:qual}).}
+\texttt{ft} $=$ n-gram features, not learned weights. The CNN rows are one committed run; see
+Challenges for how much that number moves between runs.}
 \label{tab:results}
 \vspace{-3pt}
 \begin{tabular}{@{}llrrrr@{}}
@@ -247,25 +246,25 @@ gets \textbf{92.74\%} on the Rosetta test set (macro-F1 0.927, loss 0.238), beat
 TF-IDF + NB (baseline)      & raw       & 43{,}573\,ft & 91.80 & 90.14 & 79.59 \\
 TF-IDF + NB (baseline)      & nocomment & 41{,}472\,ft & 91.48 & 89.27 & 81.89 \\
 Char-BiGRU (rejected)       & raw       & 42{,}186 & 92.59 & 90.27 & 80.54 \\
-\textbf{Char-CNN (primary)} & raw       & 68{,}938 & \textbf{94.31} & \textbf{92.74} & \textbf{82.84} \\
+\textbf{Char-CNN (primary)} & raw       & 68{,}938 & 94.31 & \textbf{92.74} & \textbf{82.84} \\
 \textbf{Char-CNN (primary)} & nocomment & 68{,}938 & 94.69 & 92.49 & 82.16 \\
 \bottomrule
 \end{tabular}
 \vspace{-4pt}
 \end{table}
 
-\textbf{What happens without comments.} Deleting every comment costs the CNN just \textbf{0.25
-points} (92.74 to 92.49), which means it is reading the \emph{structure of the code}, not the
-English in the comments. The baseline does the opposite: take its comments away and its GitHub score
-actually \emph{goes up} 2.30 points (79.59 to 81.89).
+\textbf{What happens without comments.} Deleting every comment costs the CNN just \textbf{0.25}
+(92.74 to 92.49), so it reads the \emph{structure of the code}, not the English in the comments.
+The baseline does the opposite: take its comments away and its GitHub score \emph{rises} 2.30
+(79.59 to 81.89).
 
 \textbf{Qualitative (CNN).} The model scores 9.9 points lower on GitHub than on Rosetta
 (Figure~\ref{fig:cm}), and reading the mistakes explains why. They fall into two groups.
 \emph{(1) Java called JavaScript, 30 times: licence headers.} \textbf{22 of those 30} start with an
 Apache or copyright header, and on average only \textbf{17\% of the snippet is code}---the rest is
-English inside a \texttt{/*~*/} block. Rosetta files never have these headers, so the model never
-learned that a real file often opens with legal boilerplate that looks identical in every language.
-It is not really wrong; it just has almost no code to look at. \emph{(2) PHP called Rust, 16 times: PHP 8 attributes.} \textbf{13 of those 16} contain
+English inside a \texttt{/*~*/} block. Rosetta files never have these headers, so the model never learned that a real file often opens with
+boilerplate that looks identical in every language. It is not really wrong; it just has almost no
+code to look at. \emph{(2) PHP called Rust, 16 times: PHP 8 attributes.} \textbf{13 of those 16} contain
 \texttt{\#[}, and the training data explains it: \texttt{\#[} appears in \textbf{0\% of PHP snippets
 (0 of 753)} but \textbf{9\% of Rust (63 of 703)}, so the model sensibly learned \texttt{\#[} means
 Rust. But modern PHP 8 writes attributes exactly the same way (\texttt{\#[Group('...')]}), and they
@@ -274,10 +273,11 @@ saw it---a textbook case of test data not matching training data. PHP's F1 drops
 
 \textbf{Challenges.} (i) The GitHub test set took the most effort: my first attempt got only 34
 snippets per language because the C repositories I chose were too small. The GRU's 18$\times$ cost
-also made it impractical to tune. (ii) Apple's GPU does not give identical results twice, so a fixed
-seed does not pin the number down: eight reruns landed between \textbf{91.0 and 92.7} on test
-(average 92.2). Table~3 is the run I committed, but the ordering holds---the CNN beat the baseline in
-\textbf{all 8}, the closest by 0.87---so trust the ranking, not the exact figure. \textbf{Can I finish in time?}\label{sec:feas} Yes. The data is collected, the baseline is beaten on
+also made it impractical to tune. (ii) Apple's GPU does not give identical results twice, so a fixed seed does not pin the number down.
+I reran the committed setup eight times and got anywhere from \textbf{91.01 to 92.74} on test
+(average 92.2). Table~3 reports the committed run, which is the \emph{highest} of the eight, so 92.74
+is the top of a range rather than a typical score. The ordering is what holds up: the CNN beat the
+baseline in \textbf{all eight}, the closest by 0.87 points. \textbf{Can I finish in time?}\label{sec:feas} Yes. The data is collected, the baseline is beaten on
 both test sets, and the pipeline reruns in under 3 minutes. The error analysis already says what to
 do next: strip licence headers, add post-2015 PHP, and add the SCC dataset
 \citep{alreshedy2018scc}.

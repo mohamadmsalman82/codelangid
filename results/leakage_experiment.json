@@ -1,5 +1,8 @@
 {
-  "note": "Same data, cleaning, model and seed; only the split differs.",
+  "note": "Same data, cleaning, models and seed; only the split differs.",
+  "cnn_by_task": 0.9200532978014657,
+  "cnn_by_snippet": 0.9300466355762825,
+  "cnn_inflation_points": 0.9993337774816813,
   "by_task": {
     "train_n": 7225,
     "test_n": 1501,
