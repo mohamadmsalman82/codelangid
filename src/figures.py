@@ -69,7 +69,7 @@ def arrow(ax, x1, y1, x2, y2):
 
 # ------------------------------------------------------------ Fig 1: pipeline
 def fig_pipeline():
-    fig, ax = plt.subplots(figsize=(5.5, 1.40))
+    fig, ax = plt.subplots(figsize=(5.5, 1.30))
     ax.set_xlim(-0.02, 1.02); ax.set_ylim(-0.02, 1.02); ax.axis("off"); ax.grid(False)
 
     box(ax, 0.005, 0.16, 0.135, 0.68,
@@ -163,7 +163,7 @@ def fig_curves():
 def fig_confusion():
     d = json.loads((RES / "cnn_raw.json").read_text())
     labels = d["labels"]
-    fig, axes = plt.subplots(1, 2, figsize=(5.5, 1.58))
+    fig, axes = plt.subplots(1, 2, figsize=(5.5, 1.48))
     for ax, split, title in zip(axes, ["test", "heldout"], [
             f"(a) Rosetta test  ·  acc {d['test']['accuracy']*100:.1f}%",
             f"(b) GitHub held-out  ·  acc {d['heldout']['accuracy']*100:.1f}%"]):
